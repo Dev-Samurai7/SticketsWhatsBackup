@@ -1,9 +1,13 @@
 import { StyleSheet, Image } from 'react-native';
 
 
-export default function ImageViewer({ iconWhats }) {
+export default function ImageViewer({ iconWhatsSource, selectedImage }) {
+    const imageSource = selectedImage !== null
+        ? { uri: selectedImage }
+        : iconWhatsSource;
+
     return (
-        <Image source={iconWhats} style={styles.image} />
+        <Image source={imageSource} style={styles.image} />
     );
 }
 
