@@ -4,6 +4,8 @@ import ImageViewer from './components/ImageViewer';
 import Button from './components/Button';
 import * as ImagePicker from 'expo-image-picker';
 import { useState } from 'react'; // usa o arquivo a ser selecionado
+import CircleButton from './components/homeButton';
+import IconButton from './components/IconButton';
 
 const iconWhats = require('./assets/img/iconWhats.jpg');
 
@@ -11,6 +13,7 @@ const iconWhats = require('./assets/img/iconWhats.jpg');
 export default function App() {
 
   const [selectedImage, setSelectedImage] = useState(null);
+  const [showAppOptions, setShowAppOptions] = useState(false);
 
   const pickImageAsync = async () => {
 
@@ -21,6 +24,7 @@ export default function App() {
 
     if (!result.canceled) {
       setSelectedImage(result.assets[0].uri);
+      setShowAppOptions(true);
     } else {
       alert('Você não selecionou uma imagem!')
     }
@@ -38,12 +42,15 @@ export default function App() {
 
       <Text> Export seus Stickets Whatsapp para fazer o Backup!</Text>
       <Text> Import seus Stickets Whatsapp para usar no seu dispositivo </Text>
-
-      <View style={styles.footerContainer}>
-        <Button theme="primary" label="Import Stickets" onPress={pickImageAsync} />
-        <Button theme="primary" label="Export Stickets" />
-      </View>
-
+      {showAppOptions ? (
+        <View />
+      ) : (
+        <View style={styles.footerContainer}>
+          {/* <Button theme="primary" label="Import Stickets" onPress={pickImageAsync} />*/}
+          <Button label="Import Stickets" onPress={() => setShowAppOptions(true)} />
+          <Button theme="primary" label="Export Stickets" />
+        </View>
+      )}
       <StatusBar style="auto" />
     </View>
   );
