@@ -4,7 +4,7 @@ import MaterialIcons from '@expo/vector-icons/MaterialIcons';
 export default function HomeButton({ onPress }) {
     return (
         <View style={StyleSheet.HomeButtonContainer}>
-            <Pressable style={StyleSheet.HomeButton} onPress={onPress}>
+            <Pressable style={styles.HomeButton} onPress={onPress}>
                 <MaterialIcons name="add" size={38} color="#25292e" />
             </Pressable>
         </View>

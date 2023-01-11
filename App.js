@@ -1,5 +1,5 @@
 import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View, Image } from 'react-native';
+import { SafeAreaView, Text, View } from 'react-native';
 import ImageViewer from './components/ImageViewer';
 import Button from './components/Button';
 import * as ImagePicker from 'expo-image-picker';
@@ -7,7 +7,9 @@ import { useState } from 'react'; // usa o arquivo a ser selecionado
 import CircleButton from './components/homeButton';
 import IconButton from './components/IconButton';
 
-const iconWhats = require('./assets/img/iconWhats.jpg');
+import { styles } from './styles';
+
+const iconWhats = require('./assets/img/home.png');
 
 
 export default function App() {
@@ -22,7 +24,7 @@ export default function App() {
       quality: 1
     })
 
-    if (!result.canceled) {
+    if (!result.cancelled) {
       setSelectedImage(result.assets[0].uri);
       setShowAppOptions(true);
     } else {
@@ -31,8 +33,10 @@ export default function App() {
   }
 
   return (
-    <View style={styles.container}>
 
+    <SafeAreaView style={styles.container}>
+      <View >
+      <StatusBar style='auto'/>
       <View style={styles.imageContainer}>
         <ImageViewer
           iconWhatsSource={iconWhats}
@@ -40,33 +44,20 @@ export default function App() {
         />
       </View>
 
-      <Text> Export seus Stickets Whatsapp para fazer o Backup!</Text>
-      <Text> Import seus Stickets Whatsapp para usar no seu dispositivo </Text>
       {showAppOptions ? (
         <View />
       ) : (
         <View style={styles.footerContainer}>
           <Button theme="primary" label="Import Stickets" onPress={pickImageAsync} />
+          <Text style={styles.textFooterOne}>Import seus Stickets Whatsapp para usar no seu dispositivo </Text>
 
           <Button theme="primary" label="Export Stickets" />
+          <Text style={styles.textFooterTwo}>Export seus Stickets Whatsapp para fazer o Backup!</Text>
         </View>
       )}
       <StatusBar style="auto" />
     </View>
+    </SafeAreaView>
+
   );
 }
-
-const styles = StyleSheet.create({
-  container: {
-
-    flex: 1,
-    backgroundColor: 'green',
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-  footerContainer: {
-    flex: 1 / 3,
-    alignItems: 'center',
-    textShadowColor: "black"
-  },
-});

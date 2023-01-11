@@ -43,3 +43,9 @@ Para criar um clone e rodar esse projeto é necessário instalar o expo.
 > Gerenciamentos das pastas do Drive
 
     "https://developers.google.com/drive/api/guides/manage-sharing"
+
+
+## Frontend
+
+-> Adicionei a pasta Style e criei dois arquivos
+como mesmo nome dos components
