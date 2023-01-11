@@ -46,8 +46,8 @@ export default function App() {
         <View />
       ) : (
         <View style={styles.footerContainer}>
-          {/* <Button theme="primary" label="Import Stickets" onPress={pickImageAsync} />*/}
-          <Button label="Import Stickets" onPress={() => setShowAppOptions(true)} />
+          <Button theme="primary" label="Import Stickets" onPress={pickImageAsync} />
+
           <Button theme="primary" label="Export Stickets" />
         </View>
       )}
@@ -55,8 +55,6 @@ export default function App() {
     </View>
   );
 }
-
-
 
 const styles = StyleSheet.create({
   container: {
