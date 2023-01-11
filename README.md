@@ -4,7 +4,7 @@ Este projeto visa a implementação de uma aplicação Mobile para realizar o ba
 Projeto criando usando React Native com Expo
 Para criar um clone e rodar esse projeto é necessário instalar o expo.
 
-## REQUISIÇÕES DE PROJETO // caso de uso
+## REQUISIÇÕES DE PROJETO
 
 - Exportar stickets do usuario // acesso ao armazenamento do usuario de forma automatica (v2)
 - Armazenamento dos stickets em nuvem
@@ -12,10 +12,13 @@ Para criar um clone e rodar esse projeto é necessário instalar o expo.
 
 ### Funcionalidades extras
 
--- Integrar aplicação para criar pacotes de stickets no whatsapp
--- tela de copyright > adicionar perfis dos devs.
+- Integrar aplicação para criar pacotes de stickets no whatsapp
+- Opção de compartilhar os Stickets com outros usuarios
+- tela de copyright > adicionar perfis dos devs.
 
 ## TELA > Front END
+
+-> Criei dois arquivos  com o mesmo nome dos components.
 
 > Tela Home c
 
@@ -32,20 +35,18 @@ Para criar um clone e rodar esse projeto é necessário instalar o expo.
 
 ## BackEnd
 
--> Faça login com um toque, se você já estiver conectado à sua Conta do Google.
+- Integração com google drive
+- Faça login com um toque, se você já estiver conectado à sua Conta do Google.
+- Importação / Exportação dos arquivos
+- aplicar funcionalidades extras
 
 ## LINKS uteis para implementação do projeto.
 
 > Implementar a autenticação com o google drive
 
     "https://developers.google.com/workspace/guides/get-started"
+    video exemplo de implementação  "https://www.youtube.com/watch?v=GSHc5vlj6aQ&ab_channel=Code11Programa%C3%A7%C3%A3o"
 
 > Gerenciamentos das pastas do Drive
 
     "https://developers.google.com/drive/api/guides/manage-sharing"
-
-
-## Frontend
-
--> Adicionei a pasta Style e criei dois arquivos
-como mesmo nome dos components
