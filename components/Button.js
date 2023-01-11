@@ -1,4 +1,4 @@
-import { StyleSheet, View, Pressable, Text } from "react-native";
+import { View, Pressable, Text } from "react-native";
 import FontAwesome from "@expo/vector-icons/FontAwesome";
 
 import { styles } from '../style/ButtonStyle'
