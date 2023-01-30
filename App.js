@@ -1,11 +1,12 @@
 import { StatusBar } from 'expo-status-bar';
 import { SafeAreaView, Text, View } from 'react-native';
-import ImageViewer from './components/ImageViewer';
-import Button from './components/Button';
+import ImageViewer from './src/components/ImageViewer';
+import Button from './src/components/Button';
 import * as ImagePicker from 'expo-image-picker';
 import { useState } from 'react'; // usa o arquivo a ser selecionado
-import CircleButton from './components/homeButton';
-import IconButton from './components/IconButton';
+import CircleButton from './src/components/homeButton';
+import IconButton from './src/components/IconButton';
+import * as AuthSession from 'expo-auth-session';
 
 import { styles } from './styles';
 
@@ -36,27 +37,27 @@ export default function App() {
 
     <SafeAreaView style={styles.container}>
       <View >
-      <StatusBar style='auto'/>
-      <View style={styles.imageContainer}>
-        <ImageViewer
-          iconWhatsSource={iconWhats}
-          selectedImage={selectedImage}
-        />
-      </View>
-
-      {showAppOptions ? (
-        <View />
-      ) : (
-        <View style={styles.footerContainer}>
-          <Button theme="primary" label="Import Stickets" onPress={pickImageAsync} />
-          <Text style={styles.textFooterOne}>Import seus Stickets Whatsapp para usar no seu dispositivo </Text>
-
-          <Button theme="primary" label="Export Stickets" />
-          <Text style={styles.textFooterTwo}>Export seus Stickets Whatsapp para fazer o Backup!</Text>
+        <StatusBar style='auto' />
+        <View style={styles.imageContainer}>
+          <ImageViewer
+            iconWhatsSource={iconWhats}
+            selectedImage={selectedImage}
+          />
         </View>
-      )}
-      <StatusBar style="auto" />
-    </View>
+
+        {showAppOptions ? (
+          <View />
+        ) : (
+          <View style={styles.footerContainer}>
+            <Button theme="primary" label="Import Stickets" onPress={pickImageAsync} />
+            <Text style={styles.textFooterOne}>Import seus Stickets Whatsapp para usar no seu dispositivo </Text>
+
+            <Button theme="primary" label="Export Stickets" />
+            <Text style={styles.textFooterTwo}>Export seus Stickets Whatsapp para fazer o Backup!</Text>
+          </View>
+        )}
+        <StatusBar style="auto" />
+      </View>
     </SafeAreaView>
 
   );

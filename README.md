@@ -18,7 +18,7 @@ Para criar um clone e rodar esse projeto é necessário instalar o expo.
 
 ## TELA > Front END
 
--> Criei dois arquivos  com o mesmo nome dos components.
+-> Criei dois arquivos com o mesmo nome dos components.
 
 > Tela Home c
 
@@ -39,6 +39,11 @@ Para criar um clone e rodar esse projeto é necessário instalar o expo.
 - Faça login com um toque, se você já estiver conectado à sua Conta do Google.
 - Importação / Exportação dos arquivos
 - aplicar funcionalidades extras
+
+> Commands
+
+        npx expo install expo-auth-session expo-random > instalar dependencias do authsession
+        import * as AuthSession from 'expo-auth-session' > importa o authsession
 
 ## LINKS uteis para implementação do projeto.
 
